@@ -1,8 +1,13 @@
 <h1>News App Project</h1>
 
-News App Project is a single page  web application created using React.js, CSS, HTML.
+News App Project is a single page  web application created using React.js, CSS, HTML named as Star News\.
 
-This app uses the News api to fetch the news articles data.
+This app uses the News Api to fetch the news articles data and give Top Headlines of the current.
+
+The api key in this project is stored inside the .env to ensure security of the api key.
+
+
+
 <div style="display:flex; flex-direction:row; justify-content:space-around">
 <img  src="https://cdn.worldvectorlogo.com/logos/react-1.svg"  width="120" alt="">
 <img src="https://www.freepnglogos.com/uploads/html5-logo-png/html5-logo-html-logo-0.png" width="120" alt=''>
