@@ -1,0 +1,42 @@
+
+#news_item {
+    margin:1%;
+    width: 25vw;
+    border: 0.1rem solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+/* 
+.info{
+    width:30vw;
+} */
+
+.title{
+    font-weight: 455;
+}
+.desc{
+    font-weight: 370;
+}
+.date{
+    font-weight: 200;
+}
+
+#read{
+    width: 25%;
+    background-color: rgb(137, 233, 89);
+}
+
+.news-image{
+    width:100%;
+    height:50%;
+}
+
+@media (max-width:700px) {
+    #news_item{
+        width: 70vw;
+        margin: 2% auto;
+    }
+}

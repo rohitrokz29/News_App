@@ -1,0 +1,43 @@
+.news {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90vw;
+    margin: 0 5vw;
+    justify-content: center;
+}
+
+.heading {
+    z-index: 5;
+
+    text-align: center;
+    margin: 1rem auto;
+    margin-top: 4rem;
+    font-size: 180%;
+    font-weight: 1000;
+    align-content: center;
+}
+
+.box {
+    z-index: 5;
+    border: 0.25rem solid black;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 4vh;
+
+    width: 90vw;
+    /* height: 80vh; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* position: fixed; */
+    /* overflow:scroll; */
+    /* overflow-x: hidden; */
+}
+
+@media (max-width:700px) {
+    .news {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
