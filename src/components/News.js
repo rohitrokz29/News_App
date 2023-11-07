@@ -61,13 +61,13 @@ const News = (props) => {
     <>    <div className="heading">Top Headlines - {capatilize(props.category)}</div>
       <div className="box">
         <InfiniteScroll
-          dataLength={articles.length}
+          dataLength={articles?.length}
           next={fetchMore}
           hasMore={totalResult >= page * props.pageSize}
           loader={<Load />} >
 
           <div className='news'>
-            {articles.map((element) => {
+            {articles?.map((element) => {
               return (<Newsitem key={element.url} url={element.url} urlToImage={element.urlToImage} title={element.title} description={element.description} date={element.publishedAt} />)
             })}
           </div>
