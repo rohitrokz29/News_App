@@ -1,11 +1,11 @@
-import React, {  useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Load from './Loader';
 import './news.css';
 import Newsitem from './Newsitem';
 
 
-const News = (props) => {
+const News = ({ category, api, pageSize, progress }) => {
   //articles contain news
   const [articles, setArticles] = useState([]);
 
@@ -16,31 +16,30 @@ const News = (props) => {
   const [totalResult, setTotalResult] = useState(0);
 
 
-//updates the news for each different category passed in App.js
+  //updates the news for each different category passed in App.js
   useEffect(() => {
+
+    // function fetches the news data from api and sets  it into articles 
+    const updateNews = async () => {
+      document.title = ' Star News ' + category;
+      progress(30);
+      const url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${api}&pageSize=${pageSize}&page=${page}`;
+      progress(40);
+      const data = await fetch(url);
+      progress(80);
+      const parsedData = await data.json();
+      setArticles(parsedData.articles);
+      setTotalResult(parsedData.totalResults);
+      progress(100);
+    }
     updateNews();
-  }, [props.category]);
+  }, [category,api,page,pageSize,progress]);
 
 
-  // function fetches the news data from api and sets  it into articles 
-  const updateNews = async () => {
-    document.title = ' Star News ' + props.category;
-    props.progress(30);
-    const url = `https://newsapi.org/v2/top-headlines?country=in&category=${props.category}&apiKey=${props.api}&pageSize=${props.pageSize}&page=${page}`;
-    props.progress(40);
-    const data = await fetch(url);
-    props.progress(80);
-    const parsedData = await data.json();
-    setArticles(parsedData.articles);
-    setTotalResult(parsedData.totalResults);
-    props.progress(100);
-
-
-  }
   //function to fetch data in InfiniteScroll Component
   const fetchMore = async () => {
     setPage(page + 1);
-    const url = `https://newsapi.org/v2/top-headlines?country=in&category=${props.category}&apiKey=${props.api}&pageSize=${props.pageSize}&page=${page + 1}`;
+    const url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${api}&pageSize=${pageSize}&page=${page + 1}`;
     console.log(totalResult);
     const data = await fetch(url);
     console.log(totalResult);
@@ -52,18 +51,18 @@ const News = (props) => {
 
   }
 
-  const capatilize=(str)=>{
-  let s=   String(str);
-  return (s[0].toUpperCase() + s.slice(1))
+  const capatilize = (str) => {
+    let s = String(str);
+    return (s[0].toUpperCase() + s.slice(1))
   }
 
   return (
-    <>    <div className="heading">Top Headlines - {capatilize(props.category)}</div>
+    <>    <div className="heading">Top Headlines - {capatilize(category)}</div>
       <div className="box">
         <InfiniteScroll
           dataLength={articles?.length}
           next={fetchMore}
-          hasMore={totalResult >= page * props.pageSize}
+          hasMore={totalResult >= page * pageSize}
           loader={<Load />} >
 
           <div className='news'>
@@ -73,10 +72,10 @@ const News = (props) => {
           </div>
         </InfiniteScroll>
 
-        </div>
+      </div>
 
     </>)
-    
+
 }
 
 export default News
