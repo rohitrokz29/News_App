@@ -1,16 +1,53 @@
-<h1>News App Project</h1>
+<h1 align="center" id="title">Star News</h1>
 
-News App Project is a single page  web application created using React.js, CSS, HTML named as Star News\.
+<p id="description">Star News is a basic news app delivering latest news using other news sources to get it.</p>
 
-This app uses the News Api to fetch the news articles data and give Top Headlines of the current.
+<p align="center"><img src="https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&amp;logo=express&amp;logoColor=%2361DAFB" alt="shields"><img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&amp;logo=node.js&amp;logoColor=white" alt="shields"><img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&amp;logo=react&amp;logoColor=%2361DAFB" alt="shields"></p>
 
-The api key in this project is stored inside the .env to ensure security of the api key.
+<h2>🚀 Demo</h2>
+
+[https://starnewsrohitrokz29-git-main-rohit-kharches-projects.vercel.app/](https://starnewsrohitrokz29-git-main-rohit-kharches-projects.vercel.app/)
 
 
+  
+  
+<h2>🧐 Features</h2>
 
-<div style="display:flex; flex-direction:row; justify-content:space-around">
-<img  src="https://cdn.worldvectorlogo.com/logos/react-1.svg"  width="120" alt="">
-<img src="https://www.freepnglogos.com/uploads/html5-logo-png/html5-logo-html-logo-0.png" width="120" alt=''>
-<img src='https://icon2.cleanpng.com/20180428/dyw/kisspng-web-development-cascading-style-sheets-css3-html-5ae48083dee1c8.8009083415249245479129.jpg' width="120">
-  <img src='https://icon2.cleanpng.com/20180513/qgw/kisspng-javascript-node-js-logo-computer-programming-progr-5af871b45a2e12.7720599015262314763694.jpg' width='120'>
-</div>
+Here're some of the project's best features:
+
+*   Fast Fetching of News
+*   Infinite Loading Established for user expirence
+*   Multiple news domain used
+*   Integrated with news api
+
+<h2>🛠️ Installation Steps:</h2>
+
+<p>1. Install the frontend packages</p>
+
+```
+npm install
+```
+
+<p>2. install backend packages</p>
+
+```
+cd backend && npm install
+```
+
+<p>3. start the projects</p>
+
+```
+npm run start for frontend and node index.js for backend
+```
+
+  
+  
+<h2>💻 Built with</h2>
+
+Technologies used in the project:
+
+*   React js
+*   Node js
+*   Express js
+*   Cors
+*   News API
