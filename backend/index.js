@@ -6,7 +6,6 @@ const app = express()
 
 app.use(cors())
 
-const port = 3000
 
 app.get('/:category/:pageSize/:page',async (req, res) => {
     const {category,pageSize,page}=req.params;
@@ -19,6 +18,6 @@ app.get('/:category/:pageSize/:page',async (req, res) => {
     )
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+app.listen(process.env.PORT, () => {
+  console.log(`Example app listening on port ${process.env.PORT}`)
 })
