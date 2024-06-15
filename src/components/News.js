@@ -23,7 +23,7 @@ const News = ({ category, api, pageSize, progress }) => {
     const updateNews = async () => {
       document.title = ' Star News ' + category;
       progress(30);
-      const url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${api}&pageSize=${pageSize}&page=${page}`;
+      const url=`${api}/${category}/${pageSize}/${page}`
       progress(40);
       const data = await fetch(url);
       progress(80);
@@ -39,7 +39,7 @@ const News = ({ category, api, pageSize, progress }) => {
   //function to fetch data in InfiniteScroll Component
   const fetchMore = async () => {
     setPage(page + 1);
-    const url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${api}&pageSize=${pageSize}&page=${page + 1}`;
+    const url=`${api}/${category}/${pageSize}/${page}`
     console.log(totalResult);
     const data = await fetch(url);
     console.log(totalResult);

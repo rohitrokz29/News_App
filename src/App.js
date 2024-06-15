@@ -16,7 +16,7 @@ function App() {
   const [progress,setProgress]=useState(0);
 
 //api key is stored in .env file 
-  const api=process.env.REACT_APP_API_KEY;
+  const api=process.env.REACT_APP_API;
 
   return (
 <>
